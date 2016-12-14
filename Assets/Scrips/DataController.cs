@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.SceneManagement; //can load scenes
 
-public class DataController : MonoBehaviour 
+public class DataController : MonoBehaviour //cause attached to game object
 {
 	public RoundData[] allRoundData;
 

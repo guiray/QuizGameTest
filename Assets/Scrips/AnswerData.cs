@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
+[System.Serializable] //enable to edit in unity inspector
 public class AnswerData 
 {
 	public string answerText;
