@@ -1,8 +1,8 @@
 # Unity Quiz Game Test
 
-This is a test of a quiz game inside of Unity3d. 
+**THIS IS NOT USABLE!** It is a test of a quiz game inside of Unity3d.
 
-## Objective
+## Objectives
 
 * Learn the GitHub - Unity workflow
 * I want to eventually make a music exercise/training app like [this](http://www.musictheory.net/)
