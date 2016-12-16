@@ -7,7 +7,7 @@
 * Learn the GitHub - Unity workflow
 * I want to eventually make a music exercise/training app like [this](http://www.musictheory.net/)
 
-## Resources
+### Resources
 
 [Unity - Quiz Game Live Training](https://www.youtube.com/playlist?list=PLX2vGYjWbI0QvcZNfQaJ3efswYoDmaQWX)
 
