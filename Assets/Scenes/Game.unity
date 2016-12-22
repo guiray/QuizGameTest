@@ -853,9 +853,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e75a60705eb71284c96d028205752092, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questionText: {fileID: 0}
-  answerButtonObjectPool: {fileID: 0}
-  answerButtonParent: {fileID: 0}
+  questionDisplayText: {fileID: 372933293}
+  scoreDisplayText: {fileID: 875337562}
+  answerButtonObjectPool: {fileID: 1973834451}
+  answerButtonParent: {fileID: 532974758}
+  questionDisplay: {fileID: 1227089473}
+  roundEndDisplay: {fileID: 565394338}
 --- !u!1 &1101976584
 GameObject:
   m_ObjectHideFlags: 0

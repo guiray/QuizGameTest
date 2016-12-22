@@ -9,10 +9,11 @@ public class AnswerButton : MonoBehaviour //because attached to game object
 	public Text answerText;
 
 	private AnswerData answerData;
+	private GameController gameController;
 
 	// Use this for initialization
 	void Start () {
-		
+		gameController = FindObjectOfType<GameController> ();
 	}
 
 	public void Setup(AnswerData data){
@@ -21,8 +22,8 @@ public class AnswerButton : MonoBehaviour //because attached to game object
 		answerText.text = answerData.answerText;
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
+	public void HandleClick()
+	{
+		gameController.AnswerButtonClicked (answerData.isCorrect);
 	}
 }

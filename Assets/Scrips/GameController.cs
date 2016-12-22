@@ -7,9 +7,12 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour //because attached to game object
 {
 
-	public Text questionText;
+	public Text questionDisplayText;
+	public Text scoreDisplayText;
 	public SimpleObjectPool answerButtonObjectPool;
 	public Transform answerButtonParent;
+	public GameObject questionDisplay;
+	public GameObject roundEndDisplay;
 
 	private DataController dataController;
 	private RoundData currentRoundData;
@@ -40,12 +43,13 @@ public class GameController : MonoBehaviour //because attached to game object
 	private void showQuestion() {
 		RemoveAnswerButtons ();
 		QuestionData questionData = questionPool [questionIndex];
-		questionText.text = questionData.questionText;
+		questionDisplayText.text = questionData.questionText;
 
 		for (int i = 0; i < questionData.answers.Length; i++) {
 			GameObject answerButtonGameObject = answerButtonObjectPool.GetObject ();
-			answerButtonGameObject.transform.SetParent (answerButtonParent);
 			answerButtonGameObjects.Add (answerButtonGameObject);
+			answerButtonGameObject.transform.SetParent (answerButtonParent);
+
 			AnswerButton answerButton = answerButtonGameObject.GetComponent<AnswerButton> ();
 			answerButton.Setup (questionData.answers [i]);
 		}
@@ -57,9 +61,36 @@ public class GameController : MonoBehaviour //because attached to game object
 			answerButtonGameObjects.RemoveAt (0);
 		}
 	}
+
+	public void AnswerButtonClicked(bool isCorrect)
+	{
+		if (isCorrect) 
+		{
+			playerScore += currentRoundData.pointsAddedForCorrectAnswer;
+			scoreDisplayText.text = "Score: " + playerScore.ToString ();
+		}
+		if (questionPool.Length > questionIndex + 1) {
+			questionIndex++;
+			showQuestion ();
+		} 
+		else 
+		{
+			EndRound ();
+		}
+
+	}
+
+	public void EndRound()
+	{
+		isRoundActive = false;
+
+		questionDisplay.SetActive (false);
+		roundEndDisplay.SetActive (true);
+	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+
+
 	}
 }
