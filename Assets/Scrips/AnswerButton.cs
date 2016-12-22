@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class AnswerButton : MonoBehaviour {
-
+public class AnswerButton : MonoBehaviour //because attached to game object
+{
+	//store reference to the button text
 	public Text answerText;
 
 	private AnswerData answerData;

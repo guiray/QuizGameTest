@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement; //can load scenes
 
-public class DataController : MonoBehaviour //cause attached to game object
+public class DataController : MonoBehaviour //because attached to game object
 {
 	public RoundData[] allRoundData;
 
@@ -11,11 +11,12 @@ public class DataController : MonoBehaviour //cause attached to game object
 	// Use this for initialization
 	void Start () 
 	{
+		//when we load new scenes, the game object will persist
 		DontDestroyOnLoad (gameObject);
 
 		SceneManager.LoadScene ("MenuScreen");
 	}
-
+		
 	public RoundData GetCurrentRoundData()
 	{
 		return allRoundData [0];

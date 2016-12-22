@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement; 	
 
-public class GameController : MonoBehaviour {
+public class GameController : MonoBehaviour //because attached to game object
+{
 
 	public Text questionText;
 	public SimpleObjectPool answerButtonObjectPool;

@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 
 // A very simple object pooling class
-public class SimpleObjectPool : MonoBehaviour
+//way to reuse objects instead of instanciate and destroy
+//allow to recycle objects, and avoid allocations which would lead to garbage collection while the game is running
+//avoid potentional performance problems
+public class SimpleObjectPool : MonoBehaviour 
 {
 	// the prefab that this object pool returns instances of
 	public GameObject prefab;
